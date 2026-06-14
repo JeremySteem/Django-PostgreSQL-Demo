@@ -1,0 +1,11 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}{{ asset.name }}{% endblock %}
+{% block content %}
+<h1>{{ asset.name }}</h1>
+<p><strong>Status:</strong> {{ asset.get_status_display }}</p>
+<p><strong>Location:</strong> {{ asset.location }}</p>
+<p><strong>Notes:</strong> {{ asset.notes|default:"—" }}</p>
+<p><strong>Created:</strong> {{ asset.created_at }}</p>
+<p><strong>Last Updated:</strong> {{ asset.last_updated }}</p>
+<a href="{% url 'asset_list' %}">Back to Assets</a>
+{% endblock %}

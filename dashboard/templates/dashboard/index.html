@@ -1,0 +1,27 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1>Jireh Internal Dashboard</h1>
+<div class="cards">
+    <div class="card">
+        <div class="number">{{ asset_count }}</div>
+        <div>Assets</div>
+    </div>
+    <div class="card">
+        <div class="number">{{ task_open_count }}</div>
+        <div>Open Tasks</div>
+    </div>
+    <div class="card">
+        <div class="number">{{ task_in_progress_count }}</div>
+        <div>In Progress</div>
+    </div>
+    <div class="card">
+        <div class="number">{{ task_done_count }}</div>
+        <div>Done</div>
+    </div>
+</div>
+<p>
+    <a class="button" href="{% url 'asset_list' %}">View Assets</a>
+    <a class="button" href="{% url 'task_list' %}">View Tasks</a>
+</p>
+{% endblock %}

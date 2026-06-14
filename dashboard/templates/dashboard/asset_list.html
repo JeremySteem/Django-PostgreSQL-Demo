@@ -1,0 +1,24 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Assets{% endblock %}
+{% block content %}
+<h1>Assets</h1>
+{% if is_admin %}<a class="button" href="{% url 'asset_create' %}">+ New Asset</a>{% endif %}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Location</th>
+        <th>Last Updated</th>
+    </tr>
+    {% for asset in assets %}
+    <tr>
+        <td><a href="{% url 'asset_detail' asset.pk %}">{{ asset.name }}</a></td>
+        <td>{{ asset.get_status_display }}</td>
+        <td>{{ asset.location }}</td>
+        <td>{{ asset.last_updated }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="4">No assets yet.</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

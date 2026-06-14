@@ -1,0 +1,32 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Tasks{% endblock %}
+{% block content %}
+<h1>Tasks</h1>
+{% if is_admin %}<a class="button" href="{% url 'task_create' %}">+ New Task</a>{% endif %}
+<form method="get">
+    <select name="status" onchange="this.form.submit()">
+        <option value="">All</option>
+        {% for value, label in status_choices %}
+        <option value="{{ value }}" {% if value == selected_status %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+    </select>
+</form>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Created By</th>
+        <th>Created</th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td><a href="{% url 'task_detail' task.pk %}">{{ task.title }}</a></td>
+        <td>{{ task.get_status_display }}</td>
+        <td>{{ task.created_by }}</td>
+        <td>{{ task.created_at }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="4">No tasks yet.</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}
