@@ -4,6 +4,11 @@ A small internal web application for tracking equipment/assets and tasks/change
 requests, with role-based access control. Built as a portfolio piece to
 demonstrate Django + PostgreSQL skills.
 
+**Live demo:** https://django-postgresql-demo.onrender.com/
+
+> Hosted on Render's free tier — the service spins down after periods of
+> inactivity, so the first load after idling may take 30-60 seconds.
+
 ## Why this project exists
 
 This project was built as a direct response to a job posting from Jireh

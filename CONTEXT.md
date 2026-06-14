@@ -47,7 +47,10 @@ Three features:
 | 3     | 60min | Views + templates: list, detail, create form for both models         | DONE |
 | 4     | 30min | Auth: login/logout, admin vs viewer groups, restrict write to admin  | DONE |
 | 5     | 30min | Polish: index page, basic CSS, seed data                             | DONE |
-| 6     | 15min | Deploy to Railway or Render, push to GitHub with README              | CONFIG DONE - awaiting GitHub push + hosting setup |
+| 6     | 15min | Deploy to Railway or Render, push to GitHub with README              | DONE |
+
+**Live URL:** https://django-postgresql-demo.onrender.com/
+**GitHub:** https://github.com/JeremySteem/Django-PostgreSQL-Demo
 
 ---
 
